@@ -35,6 +35,12 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct arg
+{
+	char *argument;
+} arg;
+arg Arg;
+
 /*Function Prototypes*/
 
 
