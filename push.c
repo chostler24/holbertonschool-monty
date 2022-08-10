@@ -2,7 +2,7 @@
 
 /**
   * push - adds node to end
-  * @stack: end node
+  * @stack: head node
   * @line_number: line number
   * Return: none
   */
@@ -11,8 +11,9 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	char *argstring = Arg.argument;
 	int i, argdata;
+	(void) line_number;
 
-	if (*argstring == NULL)
+	if (*argstring == '\0')
 	{
 		fprintf(stderr, "Error: unknown instruction");
 		exit(EXIT_FAILURE);
