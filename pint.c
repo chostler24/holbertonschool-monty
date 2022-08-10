@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+  * pint - prints the value at the top of the stack
+  * @stack: head node
+  * @line_number: line count
+  * Return: none
+  */
+
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)

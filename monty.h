@@ -36,7 +36,13 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+/**
+  * struct arg - argument data structure
+  * @argument: argument passed from command line
+  *
+  * Description: argument structure for
+  * stack, queues, LIFO, FIFO
+  */
 typedef struct arg
 {
 	char *argument;

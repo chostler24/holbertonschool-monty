@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+  * main - main function
+  * @argc: argument count
+  * @argv: argument array
+  * Return: int
+  */
+
 int main(int argc, char *argv[])
 {
 	char *buffer = NULL;
@@ -52,6 +59,14 @@ int main(int argc, char *argv[])
 	exit(EXIT_SUCCESS);
 }
 
+/**
+  * run_argument - finds operation function to run
+  * @argument: argument
+  * @stack: head node
+  * @line_number: line count
+  * Return: none
+  */
+
 void run_argument(char *argument, stack_t **stack, unsigned int line_number)
 {
 	int i;
@@ -62,7 +77,7 @@ void run_argument(char *argument, stack_t **stack, unsigned int line_number)
 		{NULL, NULL}
 	};
 
-	while(argument_list[i].opcode)
+	while (argument_list[i].opcode)
 	{
 		if (strcmp(argument_list[i].opcode, argument) == 0)
 		{
@@ -74,5 +89,3 @@ void run_argument(char *argument, stack_t **stack, unsigned int line_number)
 	fprintf(stderr, "L%d: unkown instruction %s\n", line_number, argument);
 	exit(EXIT_FAILURE);
 }
-
-
