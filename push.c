@@ -13,9 +13,9 @@ void push(stack_t **stack, unsigned int line_number)
 	int i, argdata;
 	stack_t *new;
 
-	if (*argstring == '\0')
+	if (argstring == NULL)
 	{
-		fprintf(stderr, "Error: unknown instruction");
+		fprintf(stderr, "Error: unknown instruction\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -23,7 +23,7 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		if ((isdigit(argstring[i])) == 0 && argstring[i] != '-')
 		{
-			fprintf(stderr, "L%i: usage: push integer", line_number);
+			fprintf(stderr, "L%i: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -33,7 +33,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (new == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 

@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 
 void run_argument(char *argument, stack_t **stack, unsigned int line_number)
 {
-	int i;
+	int i = 0;
 	instruction_t argument_list[] = {
 		{"push", push},
 		{"pall", pall},
