@@ -15,7 +15,7 @@ void add(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		fprintf(stderr, "L%i: cannot add, stack empty", line_number);
+		fprintf(stderr, "L%i: can't add, stack too short", line_number);
 
 		exit(EXIT_FAILURE);
 	}

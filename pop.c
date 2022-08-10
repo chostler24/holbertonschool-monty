@@ -13,7 +13,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		fprintf(stderr, "L%i: stack already empty", line_number);
+		fprintf(stderr, "L%i: can't pop an empty stack", line_number);
 
 		exit(EXIT_FAILURE);
 	}
