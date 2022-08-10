@@ -11,7 +11,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	char *argstring = Arg.argument;
 	int i, argdata;
-	(void) line_number;
+	stack_t *new;
 
 	if (*argstring == '\0')
 	{
@@ -23,13 +23,13 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		if ((isdigit(argstring[i])) == 0 && argstring[i] != '-')
 		{
-			fprintf(stderr, "Error: unknown instruction");
+			fprintf(stderr, "L%i: usage: push integer", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
 
 	argdata = atoi(argstring);
-	stack_t *new = malloc(sizeof(stack_t));
+	new = malloc(sizeof(stack_t));
 
 	if (new == NULL)
 	{
@@ -37,7 +37,7 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	new->n = n;
+	new->n = argdata;
 	new->prev = NULL;
 	new->next = *stack;
 

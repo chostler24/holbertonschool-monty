@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 	FILE *fd;
 	stack_t *STACK, *tmp;
 	char *argument = NULL;
+	unsigned int line_number = 1;
 
 	STACK = NULL;
 	if (argc != 2)
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
 	fd = fopen(argv[1], "r");
 	if (!fd)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", file);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
@@ -71,9 +72,13 @@ void run_argument(char *argument, stack_t **stack, unsigned int line_number)
 {
 	int i;
 	instruction_t argument_list[] = {
-		{"push", push}
-		{"pall", pall}
-		{"pint", pint}
+		{"push", push},
+		{"pall", pall},
+		{"pint", pint},
+		{"add", add},
+		{"swap", swap},
+		{"nop", nop},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 
