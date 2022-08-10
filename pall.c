@@ -2,11 +2,14 @@
 
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
+	stack_t *temp;
+
 	if (stack == NULL || *stack == NULL)
 		return;
-	while (*stack != NULL)
+	temp = *stack;
+	while (temp != NULL)
 	{
-		printf("%i\n", (*stack)->n);
-		*stack = (*stack)->next;
+		printf("%i\n", temp->n);
+		temp = temp->next;
 	}
 }
