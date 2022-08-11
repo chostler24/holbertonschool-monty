@@ -9,10 +9,13 @@
 
 void pint(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp;
+
 	if (stack == NULL || *stack == NULL)
 	{
 		fprintf(stderr, "L%i: can't pint, stack empty\n", line_number);
 		exit(EXIT_SUCCESS);
 	}
-	printf("%i\n", (*stack)->n);
+	temp = *stack;
+	printf("%i\n", temp->n);
 }
