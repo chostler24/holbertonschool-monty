@@ -23,4 +23,5 @@ void add(stack_t **stack, unsigned int line_number)
 	temp = (*stack)->next;
 	sumof = (*stack)->n + temp->n;
 	temp->n = sumof;
+	*stack = (*stack)->next;
 }

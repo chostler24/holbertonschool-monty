@@ -9,55 +9,44 @@
 
 int main(int argc, char *argv[])
 {
-	char *buffer = NULL;
-	size_t buffersize = 0;
-	FILE *fd;
-	stack_t *STACK, *tmp;
-	char *argument = NULL;
+	char *buffer = NULL, *argument = NULL, size_t buffersize = 0;
+	FILE *fd, stack_t *STACK, *tmp;
 	unsigned int line_number = 1;
 
 	STACK = NULL;
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
+		fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
 	}
 	fd = fopen(argv[1], "r");
 	if (!fd)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]), exit(EXIT_FAILURE);
 	}
 
 	while ((getline(&buffer, &buffersize, fd)) != (-1))
 	{
 		if (*buffer == '\n')
 		{
-			line_number++;
-			continue;
+			line_number++, continue;
 		}
 		argument = strtok(buffer, " \t\n");
 		if (!argument)
 		{
-			line_number++;
-			continue;
+			line_number++, continue;
 		}
 		Arg.argument = strtok(NULL, " \t\n");
-		run_argument(argument, &STACK, line_number);
-		line_number++;
+		run_argument(argument, &STACK, line_number), line_number++;
 	}
 	free(buffer);
 	if (STACK != NULL)
 	{
 		while (STACK != NULL)
 		{
-			tmp = STACK;
-			STACK = tmp->next;
-			free(tmp);
+			tmp = STACK, STACK = tmp->next, free(tmp);
 		}
 	}
-	fclose(fd);
-	exit(EXIT_SUCCESS);
+	fclose(fd), exit(EXIT_SUCCESS);
 }
 
 /**
