@@ -9,8 +9,10 @@
 
 int main(int argc, char *argv[])
 {
-	char *buffer = NULL, *argument = NULL, size_t buffersize = 0;
-	FILE *fd, stack_t *STACK, *tmp;
+	char *buffer = NULL, *argument = NULL;
+	size_t buffersize = 0;
+	FILE *fd;
+	stack_t *STACK, *tmp;
 	unsigned int line_number = 1;
 
 	STACK = NULL;
