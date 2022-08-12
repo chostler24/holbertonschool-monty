@@ -15,7 +15,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (argstring == NULL)
 	{
-		fprintf(stderr, "Error: unknown instruction\n");
+		fprintf(stderr, "L%i: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 

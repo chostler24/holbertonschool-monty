@@ -2,8 +2,8 @@
 
 /**
  * pall - prints entire stack
- * @stack - stack
- * @line_number - line # of argument
+ * @stack: the stack
+ * @line_number: unused
  * Return: void
  */
 

@@ -80,6 +80,6 @@ void run_argument(char *argument, stack_t **stack, unsigned int line_number)
 		}
 		i++;
 	}
-	fprintf(stderr, "L%d: unkown instruction %s\n", line_number, argument);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, argument);
 	exit(EXIT_FAILURE);
 }
