@@ -29,6 +29,9 @@ void swap(stack_t **stack, unsigned int line_number)
 	temp->next = (*stack)->next;
 	(*stack)->next = temp;
 	temp->prev = *stack;
-	temp = temp->next;
-	temp->prev = (*stack)->next;
+	if (temp->next)
+	{
+		temp = temp->next;
+		temp->prev = (*stack)->next;
+	}
 }
